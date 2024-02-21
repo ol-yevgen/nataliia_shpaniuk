@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mongodb"
+    url      = env("MONGO_URI")
+}
+
+
+
+
+//* --- LAYOUT --- *//
+
+model NavLinks {
+    id              String   @id            @default(auto()) @map("_id") @db.ObjectId
+    lang            String   @unique        
+
+    navLinks        NavLink[]
+}
+
+model NavLink {
+    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+    link            String   @unique
+    label           String   @unique
+
+    navLinksId            String   @unique @db.ObjectId
+    navLinks             NavLinks       @relation(fields: [navLinksId], references: [id])
+}
+
+model MainPhoto {
+    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+    photo           String   @unique
+}
+
+model Social {
+    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+    link            String?  @unique
+    label           String?  @unique
+}

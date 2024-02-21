@@ -1,0 +1,51 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.home {
+    @include flex-container-center;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 100%;
+
+    &__title {
+        position: relative;
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        font-size: 6.3rem;
+
+        text-transform: uppercase;
+        color: #000;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            width: 15%;
+            border: 3px solid #000;
+        }
+
+        @media (max-width: 1200px) {
+         font-size: 6.1rem;
+        }
+
+        @media (max-width: 700px) {
+            font-size: 4.6rem;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 3rem;
+        font-weight: 600;
+        font-size: 3rem;
+
+        color: $secondaryColor;
+
+        @media (max-width: 700px) {
+            font-size: 2.5rem;
+        }
+    }
+
+}

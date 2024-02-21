@@ -1,0 +1,157 @@
+@import '@/app/styles/variables.scss';
+
+@mixin flex-container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-container-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin transition-in-common {
+    transition: all 0.3s ease-in;
+}
+
+@mixin link-hover {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        width: 0;
+        height: 100%;
+        background: $mainColor;
+        transition: all 1s ease;
+    }
+    &:hover {
+        cursor: pointer;
+        color: $bgColor;
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
+
+    &:focus {
+        outline: none;
+
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+// COMMON RESET STYLES
+@mixin main-resets($fontSize, $mainColor, $mainBgColor, $mainTextColor, $scrollBarColor) {
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: $mainColor;
+    }
+
+    html,
+    body {
+        position: relative;
+        z-index: -100;
+        font-size: $fontSize;
+        color: $mainColor;
+        background: $bgColor;
+
+        scrollbar-width: thin;
+        scroll-behavior: smooth;
+        scrollbar-color: $mainColor transparent;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        min-width: 320px;
+        overflow-x: hidden;
+    }
+
+    ul,
+    li,
+    dl {
+        list-style-type: none;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+
+        transition: all 0.4s ease-in;
+
+        &:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+        font: inherit;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    ::before,
+    ::after {
+        letter-spacing: normal;
+    }
+
+    #root {
+        position: relative;
+        z-index: -40;
+    }
+}

@@ -1,0 +1,25 @@
+@import '@/app/styles/mixins.scss';
+@import '@/app/styles/mixins.scss';
+
+.social {
+    @include flex-container-center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    &__list {
+        @include flex-container-center;
+        justify-content: space-around;
+        height: 100%;
+    }
+
+    &__icon {
+        position: relative;
+        @include flex-container-center;
+        padding: 1rem 1.5rem;
+
+        @include link-hover;
+        &:hover > svg {
+            fill: $bgColor;
+        }
+    }
+}

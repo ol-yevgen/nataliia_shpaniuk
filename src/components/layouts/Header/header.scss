@@ -1,0 +1,26 @@
+@import '@/app/styles/mixins.scss';
+@import '@/app/styles/mixins.scss';
+
+.header {
+    @include flex-container-between;
+
+    &__nav {
+        width: 100%;
+    }
+
+    &__selector {
+        position: relative;
+
+        @include link-hover;
+    }
+
+    @media (max-width: 1100px) {
+        padding: 0 3rem;
+    }
+}
+
+.logo {
+    font-size: 2.3rem;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+}
