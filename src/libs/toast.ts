@@ -3,18 +3,18 @@ import { toast } from 'react-toastify';
 
 export const successToast = (message: string) => {
     toast.success(message, {
-        position: toast.POSITION.BOTTOM_RIGHT,
+        position: "bottom-right",
     });
 }
 
 export const errorToast = (message: string) => {
     toast.error(message, {
-        position: toast.POSITION.BOTTOM_RIGHT,
+        position: "bottom-right",
     });
 }
 
 export const infoToast = (message: string) => {
     toast.info(message, {
-        position: toast.POSITION.BOTTOM_RIGHT,
+        position: "bottom-right",
     });
 }
