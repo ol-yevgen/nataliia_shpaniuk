@@ -12,7 +12,7 @@ import { LanguageContext } from '@/providers/LanguageProvider';
 
 const Navbar = () => {
 
-    const locale = useContext(LanguageContext).locale
+    const locale = useContext(LanguageContext).lang
 
     const { data } = useQuery({
         queryKey: ['navLinks'],

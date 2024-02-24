@@ -1,9 +1,9 @@
 'use client'
 
-import { ReactNode, createContext } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 
 interface LanguageContextTypes {
-    locale: string
+    lang: string
 }
 
 interface IProps {
@@ -12,13 +12,17 @@ interface IProps {
 }
 
 export const LanguageContext = createContext<LanguageContextTypes>({
-    locale: 'en'
+    lang: 'en'
 })
 
 export const LanguageProvider = ({ children, locale }: IProps) => {
-
+    const [lang, setLang] = useState<string>(locale)
+    useEffect(() => {
+        setLang(locale)
+    }, [locale])
+    
     return (
-        <LanguageContext.Provider value={{ locale }}>
+        <LanguageContext.Provider value={{ lang }}>
             {children}
         </LanguageContext.Provider>
     )

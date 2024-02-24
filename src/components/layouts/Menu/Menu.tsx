@@ -10,7 +10,7 @@ import { LanguageContext } from '@/providers/LanguageProvider';
 
 const Menu = () => {
 
-    const locale = useContext(LanguageContext).locale
+    const locale = useContext(LanguageContext).lang
     const windowWidth = useResize()
 
     return (

@@ -2,7 +2,6 @@ import { ChangeEvent } from "react";
 import './languageSelector.scss'
 import { usePathname, useRouter } from "next/navigation";
 import i18nConfig from "@/i18nConfig";
-import { useQuery } from "@tanstack/react-query";
 
 export const LanguageSelector = ({ locale }: { locale: string }) => {
 
@@ -19,14 +18,10 @@ export const LanguageSelector = ({ locale }: { locale: string }) => {
         const expires = date.toUTCString();
         document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
 
-        if (
-            locale === i18nConfig.defaultLocale
-        ) {
+        if (locale === i18nConfig.defaultLocale) {
             router.push('/' + newLocale + currentPathname);
         } else {
-            router.push(
-                currentPathname.replace(`/${locale}`, `/${newLocale}`)
-            );
+            router.push(currentPathname.replace(`/${locale}`, `/${newLocale}`));
         }
 
     };

@@ -18,7 +18,7 @@ interface ISlideBar {
 
 const SlideBar = ({burgerRef }: ISlideBar) => {
 
-    const locale = useContext(LanguageContext).locale
+    const locale = useContext(LanguageContext).lang
 
     const { data } = useQuery({
         queryKey: ['social'],
