@@ -38,3 +38,109 @@ model Social {
     link            String?  @unique
     label           String?  @unique
 }
+
+//* --- HOME PAGE --- *//
+
+model HomePage {
+    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+
+    lang            String   @unique @default("en")
+    name            String   @unique
+    position        String   @unique
+    contactButton   String   @unique
+
+    createAt        DateTime @default(now())
+    updateAt        DateTime @updatedAt
+}
+
+
+
+//* --- ABOUT PAGE --- *//
+
+model AboutPage {
+    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+
+    lang            String   @unique 
+    about           AboutAbout?
+    skills          AboutSkills?
+    languages       AboutLanguages?
+    hobbies         AboutHobbies?
+
+    createAt        DateTime @default(now())
+    updateAt        DateTime @updatedAt
+}
+
+model AboutAbout {
+    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+
+    lang            String    
+    title           String    
+    text            String?   
+    services        String[]  
+    download        String?    
+    
+    createAt        DateTime @default(now())
+    updateAt        DateTime @updatedAt
+
+    aboutPageId            String   @unique @db.ObjectId
+    aboutPage             AboutPage       @relation(fields: [aboutPageId], references: [id])
+}
+
+model AboutSkills {
+    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+
+    lang            String    
+    title           String    @unique
+    services        String[]  @unique
+
+    createAt        DateTime @default(now())
+    updateAt        DateTime @updatedAt
+
+    aboutPageId            String   @unique @db.ObjectId
+    aboutPage             AboutPage       @relation(fields: [aboutPageId], references: [id])
+}
+
+model AboutLanguages {
+    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+
+    lang            String    
+    title           String    @unique
+    services        AboutLanguage[]  
+
+    createAt        DateTime @default(now())
+    updateAt        DateTime @updatedAt
+
+    aboutPageId            String   @unique @db.ObjectId
+    aboutPage          AboutPage      @relation(fields: [aboutPageId], references: [id])
+}
+
+model AboutLanguage {
+    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+
+    name            String    @unique
+    rating          String    
+
+    aboutLanguagesId      String   @unique @db.ObjectId
+    aboutLanguages        AboutLanguages       @relation(fields: [aboutLanguagesId], references: [id])
+}
+
+model AboutHobbies {
+    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+
+    lang            String    
+    title           String    @unique
+    services        String[]  @unique
+
+    aboutPageId            String   @unique @db.ObjectId
+    aboutPage             AboutPage       @relation(fields: [aboutPageId], references: [id])
+}
+
+model AboutCv {
+    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+
+    lang            String    
+    aboutCV         String   @unique
+
+    createAt        DateTime @default(now())
+    updateAt        DateTime @updatedAt
+}

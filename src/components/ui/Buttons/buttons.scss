@@ -1,0 +1,21 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.btn {
+    position: relative;
+    padding: 1.5rem 3rem;
+    background: $mainColor;
+
+    color: $bgColor;
+    letter-spacing: 0.3rem;
+
+    border: 3px solid $mainColor;
+
+    transition: all 0.8s;
+
+    &:hover {
+        cursor: pointer;
+        background: $bgColor;
+        color: $mainColor;
+    }
+}
