@@ -1,15 +1,19 @@
-import { MouseEvent, RefObject, useCallback, useEffect, useState } from "react"
+'use client'
+import { MouseEvent, RefObject, useCallback, useEffect, useRef, useState } from "react"
 
-export default function useOutsideClickListener(ref: RefObject<HTMLElement>) {
+// export default function useOutsideClickListener(ref: RefObject<HTMLElement>) {
+export default function useOutsideClickListener() {
+    const burgerRef = useRef(null) as RefObject<HTMLDivElement>
+
     const [isShow, setIsShow] = useState<boolean>(false)
 
     const handlerClickOutside = useCallback((event: MouseEvent) => {
         
-        if (ref.current && !ref.current.contains(event.target as Node)) {
+        if (burgerRef.current && !burgerRef.current.contains(event.target as Node)) {
             setIsShow(false)
         }
   
-    }, [ref])
+    }, [burgerRef])
 
     useEffect(() => {
         
@@ -22,5 +26,5 @@ export default function useOutsideClickListener(ref: RefObject<HTMLElement>) {
         }
     }, [handlerClickOutside, isShow])
 
-    return { isShow, setIsShow }
+    return { isShow, setIsShow, burgerRef }
 };

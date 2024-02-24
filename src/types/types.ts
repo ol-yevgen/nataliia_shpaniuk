@@ -5,7 +5,8 @@ export interface ILocale {
 export interface ILink {
     id?: string,
     link: string,
-    label: string
+    label: string,
+    icon?: JSX.Element
 }
 
 export interface IHomePage {

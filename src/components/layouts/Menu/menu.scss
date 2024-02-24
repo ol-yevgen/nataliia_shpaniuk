@@ -1,0 +1,12 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.main__menu {
+    @include flex-container-center;
+    
+    @media (max-width: 900px) {
+        display: none;
+    }
+}
+
+

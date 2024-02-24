@@ -21,6 +21,17 @@ export const getNavLinks = async (lang: string) => {
     }
 }
 
+export const getPhoto = async () => {
+    try {
+        const mainPhoto = await prisma.mainPhoto.findFirst()
+
+        return mainPhoto as IMainPhoto
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export const getSocial = async () => {
     try {
         const social = await prisma.social.findMany()

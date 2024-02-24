@@ -1,0 +1,31 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.lang__select {
+    position: relative;
+    padding: 1rem 2rem;
+
+    background: transparent;
+    border: none;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $mainColor;
+
+    @include transition-in-common;
+
+    &--options {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &:hover {
+        cursor: pointer;
+        color: $bgColor;
+    }
+
+    &:focus {
+        outline: 2px solid $mainColor;
+    }
+}

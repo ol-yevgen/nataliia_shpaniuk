@@ -1,0 +1,29 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.nav {
+    display: flex;
+    
+    &__link {
+        position: relative;
+        padding: 1rem 2rem;
+
+        @include link-hover;
+
+        &-active {
+            color: $bgColor;
+            background: $mainColor;
+        }
+
+        &:focus > li {
+            color: $bgColor;
+        }
+    }
+
+    @media (max-width: 900px) {
+        @include flex-column;
+        align-items: flex-end;
+        justify-content: space-around;
+        height: 100%;
+    }
+}
