@@ -1,0 +1,62 @@
+@import '@/app/styles/variables.scss';
+@import '@/app/styles/mixins.scss';
+
+.about {
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media (max-width: 507px) {
+            display: block;
+        }
+    }
+
+    &__column {
+        width: 47%;
+        overflow: hidden;
+
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+        color: $secondaryColor;
+
+        overflow: hidden;
+
+        @media (max-width: 507px) {
+           width: 100%;
+
+            &:nth-child(2) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__text {
+        margin-bottom: 1rem;
+    }
+
+    &__list {
+        padding-left: 3rem;
+    }
+
+    &__list-item {
+        position: relative;
+        margin-bottom: 1rem;
+
+        &::before {
+            position: absolute;
+            top: 30%;
+            left: -3rem;
+
+            content: "";
+            border-top: 5px solid transparent;
+            border-left: 8px solid $secondaryColor;
+            border-bottom: 5px solid transparent;
+        }
+    }
+}
+
+.languages__name {
+    display: inline-block;
+    width: 100px;
+}

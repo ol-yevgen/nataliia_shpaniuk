@@ -65,6 +65,38 @@ export const getHomePageText = async (lang: string) => {
     }
 }
 
+export const getAboutPageText = async (lang: string) => {
+    try {
+        const data = await prisma.aboutPage.findUnique({
+            where: {
+                lang: lang
+            },
+            include: {
+                about: true,
+                skills: true,
+                languages: {
+                    include: {
+                        services: true
+                    }
+                },
+                hobbies: true
+            }
+        })
+
+        const aboutPageText = [
+            data?.about as IAboutColumn,
+            data?.skills as IAboutColumn,
+            data?.languages as IAboutColumnWithLanguage,
+            data?.hobbies as IAboutColumn
+        ]
+
+        return aboutPageText as (IAboutColumn | IAboutColumnWithLanguage)[]
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export const getCv = async (lang: string) => {
     try {
         const cv = await prisma.aboutCv.findFirst({

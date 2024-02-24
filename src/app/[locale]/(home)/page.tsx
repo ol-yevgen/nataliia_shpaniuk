@@ -4,20 +4,36 @@ import './home.scss'
 import MotionContainer from '@/components/ui/MotionContainer/MotionContainer';
 import { IHomePage } from '@/types/types';
 import { getHomePageText } from '@/server/action';
+import { Metadata, ResolvingMetadata } from 'next';
 // import ImageUpload from '@/components/ui/ImageUpload/ImageUpload';
 
 
 // export const metadata = {
-//     title: 'Home | Portfolio Oliinyk Yevgenii',
+//     title: 'Home | Nataliia Shpaniuk',
 // }
 
-async function Home({ params: { locale } }: { params: { locale: string } }) {
+type Props = {
+    params: { locale: string }
+}
+
+export async function generateMetadata(
+    { params }: Props,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const locale = params.locale
+    const home = await getHomePageText(locale)
+
+    return {
+        title: home?.name
+    }
+}
+
+async function Home({ params: { locale } }: Props) {
 
     const data = await getHomePageText(locale) as IHomePage
 
     return (
         <section className='home'>
-            
             {
                 data &&
                 <div className="home__wrapper">
@@ -31,7 +47,7 @@ async function Home({ params: { locale } }: { params: { locale: string } }) {
                     <MotionContainer
                         initial={{ y: 30 }}
                         duration={1}
-                        delay={5}
+                        delay={2}
                     >
                         <p className="home__subtitle">
                             {data.position}
@@ -39,8 +55,8 @@ async function Home({ params: { locale } }: { params: { locale: string } }) {
                     </MotionContainer>
                     <MotionContainer
                         initial={{ y: 10 }}
-                        duration={1.5}
-                        delay={6}
+                        duration={1}
+                        delay={5.5}
                     >
                         <Link
                             href="/contacts"
