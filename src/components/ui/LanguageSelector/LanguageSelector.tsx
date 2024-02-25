@@ -18,7 +18,7 @@ export const LanguageSelector = ({ locale }: ILocale) => {
         const date = new Date();
         date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
         const expires = date.toUTCString();
-        document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires}`;
+        document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
 
         if (locale === i18nConfig.defaultLocale) {
             router.push('/' + newLocale + currentPathname);
