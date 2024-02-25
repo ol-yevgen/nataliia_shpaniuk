@@ -10,17 +10,23 @@ import { ILocale } from '@/types/types';
 
 const Menu = ({ locale }: ILocale) => {
 
-    const windowWidth = useResize()
+    // const windowWidth = useResize()
 
     return (
-        windowWidth.isScreenLg
-            ? <div className="main__menu">
-                <Navbar locale={locale} />
-                <div className="header__selector">
-                    <LanguageSelector locale={locale} />
-                </div>
+        <div className="main__menu">
+            <Navbar locale={locale} />
+            <div className="header__selector">
+                <LanguageSelector locale={locale} />
             </div>
-            : <Burger locale={locale} />
+        </div>
+        // windowWidth.isScreenLg
+        //     ? <div className="main__menu">
+        //         <Navbar locale={locale} />
+        //         <div className="header__selector">
+        //             <LanguageSelector locale={locale} />
+        //         </div>
+        //     </div>
+        //     : <Burger locale={locale} />
     )
 }
 

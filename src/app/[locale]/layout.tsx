@@ -33,7 +33,7 @@ export default async function RootLayout({
     params: { locale: string };
 }) {
 
-    const {photo} = await getPhoto() as IMainPhoto
+    // const {photo} = await getPhoto() as IMainPhoto
 
     return (
         <html lang={locale}>
@@ -45,7 +45,7 @@ export default async function RootLayout({
                         <main className="main">
                             <div className="main__container">
                                 <MotionContainer initial={{ x: -10 }} delay={0} duration={1.7} className="photo">
-                                    {photo &&
+                                    {/* {photo &&
                                         <Image
                                             src={photo}
                                             width={350}
@@ -55,7 +55,7 @@ export default async function RootLayout({
                                             className="photo__image"
                                             alt='Nataliia'
                                         />
-                                    }
+                                    } */}
                                 </MotionContainer>
                                 <div className="container">
                                     {children}

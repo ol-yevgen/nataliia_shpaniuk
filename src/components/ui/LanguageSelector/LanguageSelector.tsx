@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect } from "react";
 import './languageSelector.scss'
 import { usePathname, useRouter } from "next/navigation";
 import i18nConfig from "@/i18nConfig";
@@ -23,7 +23,7 @@ export const LanguageSelector = ({ locale }: ILocale) => {
         if (locale === i18nConfig.defaultLocale) {
             router.push('/' + newLocale + currentPathname);
         } else {
-            router.push(currentPathname.replace(`/${locale}`, `/${newLocale}`));
+            router.push(currentPathname.replace(`${locale}`, `${newLocale}`));
         }
 
     };
