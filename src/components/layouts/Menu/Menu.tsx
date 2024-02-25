@@ -6,17 +6,16 @@ import './menu.scss'
 import LanguageSelector from '@/components/ui/LanguageSelector/LanguageSelector';
 import Burger from '@/components/layouts/Burger/Burger';
 import { useContext } from 'react';
-import { LanguageContext } from '@/providers/LanguageProvider';
+import { ILocale } from '@/types/types';
 
-const Menu = () => {
+const Menu = ({ locale }: ILocale) => {
 
-    const locale = useContext(LanguageContext).lang
     const windowWidth = useResize()
 
     return (
         windowWidth.isScreenLg
             ? <div className="main__menu">
-                <Navbar/>
+                <Navbar locale={locale} />
                 <div className="header__selector">
                     <LanguageSelector locale={locale} />
                 </div>

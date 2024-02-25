@@ -8,11 +8,9 @@ import { getNavLinks } from '@/server/action';
 import { Fragment, useContext } from 'react';
 import MotionContainer from '@/components/ui/MotionContainer/MotionContainer';
 import { useResize } from '@/hooks/useResize';
-import { LanguageContext } from '@/providers/LanguageProvider';
+import { ILocale } from '@/types/types';
 
-const Navbar = () => {
-
-    const locale = useContext(LanguageContext).lang
+const Navbar = ({ locale }: ILocale) => {
 
     const { data } = useQuery({
         queryKey: ['navLinks'],

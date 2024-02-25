@@ -35,7 +35,7 @@ const Header = async ({ locale }: ILocale) => {
                         NATALIIA
                     </Link>
                 </div>
-                <Menu/>
+                <Menu locale={locale} />
             </header>
         </HydrationBoundary>
     )

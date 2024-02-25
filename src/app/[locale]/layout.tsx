@@ -5,7 +5,6 @@ import Header from '@/components/layouts/Header/Header'
 import Footer from '@/components/layouts/Footer/Footer'
 // import Spinner from '@/components/ui/Spinner/Spinner'
 // import { Analytics } from '@vercel/analytics/react';
-import { LanguageProvider } from '@/providers/LanguageProvider'
 import type { Metadata } from 'next'
 import '@/app/styles/globals.scss'
 import Image from 'next/image'
@@ -41,33 +40,31 @@ export default async function RootLayout({
             <body className={poppins.className}>
                 {/* <GoogleAnalytics GA_TRACKING_ID={GA_MEASUREMENT_ID} /> */}
                 <QueryClientProvider>
-                    <LanguageProvider locale={locale}>
-                        <div className="wrapper">
-                            <Header locale={locale} />
-                            <main className="main">
-                                <div className="main__container">
-                                    <MotionContainer initial={{ x: -10 }} delay={0} duration={1.7} className="photo">
-                                        {photo &&
-                                            <Image
-                                                src={photo}
-                                                width={350}
-                                                height={900}
-                                                quality={80}
-                                                priority
-                                                className="photo__image"
-                                                alt='Nataliia'
-                                            />
-                                        }
-                                    </MotionContainer>
-                                    <div className="container">
-                                        {children}
-                                        {/* <Analytics /> */}
-                                    </div>
+                    <div className="wrapper">
+                        <Header locale={locale} />
+                        <main className="main">
+                            <div className="main__container">
+                                <MotionContainer initial={{ x: -10 }} delay={0} duration={1.7} className="photo">
+                                    {photo &&
+                                        <Image
+                                            src={photo}
+                                            width={350}
+                                            height={900}
+                                            quality={80}
+                                            priority
+                                            className="photo__image"
+                                            alt='Nataliia'
+                                        />
+                                    }
+                                </MotionContainer>
+                                <div className="container">
+                                    {children}
+                                    {/* <Analytics /> */}
                                 </div>
-                            </main>
-                            <Footer />
-                        </div>
-                    </LanguageProvider>
+                            </div>
+                        </main>
+                        <Footer />
+                    </div>
                 </QueryClientProvider>
                 {/* <SpeedInsights /> */}
             </body>

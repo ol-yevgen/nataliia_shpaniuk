@@ -39,6 +39,7 @@ const Burger = ({ locale }: ILocale) => {
                 <>
                     <div className='header__burger--hide'></div>
                     <SlideBar
+                        locale={locale}
                         burgerRef={burgerRef}
                     />
                 </>

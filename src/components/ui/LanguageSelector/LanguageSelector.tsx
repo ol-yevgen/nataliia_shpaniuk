@@ -2,8 +2,9 @@ import { ChangeEvent } from "react";
 import './languageSelector.scss'
 import { usePathname, useRouter } from "next/navigation";
 import i18nConfig from "@/i18nConfig";
+import { ILocale } from "@/types/types";
 
-export const LanguageSelector = ({ locale }: { locale: string }) => {
+export const LanguageSelector = ({ locale }: ILocale) => {
 
     const router = useRouter();
     const currentPathname = usePathname()

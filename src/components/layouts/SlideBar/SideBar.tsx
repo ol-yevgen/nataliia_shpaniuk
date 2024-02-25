@@ -8,17 +8,15 @@ import Image from 'next/image';
 import Social from '@/components/Social/Social';
 import { useQuery } from '@tanstack/react-query';
 import { getPhoto, getSocial } from '@/server/action';
-import { ILink } from '@/types/types';
+import { ILink, ILocale } from '@/types/types';
 import MotionContainer from '@/components/ui/MotionContainer/MotionContainer';
-import { LanguageContext } from '@/providers/LanguageProvider';
 
 interface ISlideBar {
     burgerRef: RefObject<HTMLDivElement>
+    locale: string
 }
 
-const SlideBar = ({burgerRef }: ISlideBar) => {
-
-    const locale = useContext(LanguageContext).lang
+const SlideBar = ({burgerRef, locale }: ISlideBar) => {
 
     const { data } = useQuery({
         queryKey: ['social'],
@@ -53,7 +51,7 @@ const SlideBar = ({burgerRef }: ISlideBar) => {
                     }
                 </MotionContainer>
 
-                <Navbar/>
+                <Navbar locale={locale} />
 
                 <div className="mobile__social">
                     <Social social={data as ILink[]} />
