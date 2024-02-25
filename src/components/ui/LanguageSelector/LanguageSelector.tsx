@@ -7,7 +7,8 @@ import { ILocale } from "@/types/types";
 export const LanguageSelector = ({ locale }: ILocale) => {
 
     const router = useRouter();
-    const currentPathname = usePathname()
+    const currentPathname = usePathname()  
+    // const cookieStore = cookies()
     
     const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
         e.stopPropagation()
@@ -17,7 +18,7 @@ export const LanguageSelector = ({ locale }: ILocale) => {
         const date = new Date();
         date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
         const expires = date.toUTCString();
-        document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
+        document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires}`;
 
         if (locale === i18nConfig.defaultLocale) {
             router.push('/' + newLocale + currentPathname);
