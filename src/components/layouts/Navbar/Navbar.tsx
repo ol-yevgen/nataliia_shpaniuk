@@ -22,6 +22,8 @@ const Navbar = ({ locale }: ILocale) => {
 
     return (
         <nav className="header__nav">
+            <span>NavBar: {locale}</span>
+
             <ul className="nav">
                 {data?.map((link, index) => {
                     const navLink = () => {

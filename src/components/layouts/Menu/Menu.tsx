@@ -14,6 +14,7 @@ const Menu = ({ locale }: ILocale) => {
 
     return (
         <div className="main__menu">
+            <span>Menu: {locale}</span>
             <Navbar locale={locale} />
             <div className="header__selector">
                 <LanguageSelector locale={locale} />

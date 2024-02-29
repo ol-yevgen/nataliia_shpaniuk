@@ -34,6 +34,7 @@ const Header = async ({ locale }: ILocale) => {
                     >
                         NATALIIA
                     </Link>
+                    <span>Header: {locale}</span>
                 </div>
                 <Menu locale={locale} />
             </header>

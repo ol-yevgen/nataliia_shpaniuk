@@ -29,24 +29,28 @@ export const LanguageSelector = ({ locale }: ILocale) => {
     };
 
     return (
-        <select
-            className="lang__select"
-            name="lang"
-            id="lang-select"
-            value={locale}
-            onChange={e => handleChange(e)}
-        >
-            <option
-            className="lang__select--en"
-            value="en">
-                EN
-            </option>
-            <option
-                className="lang__select--ua"
-                value="ua">
-                UA
-            </option>
-        </select>
+        <>
+            <span>Selector: {locale}</span>
+
+            <select
+                className="lang__select"
+                name="lang"
+                id="lang-select"
+                value={locale}
+                onChange={e => handleChange(e)}
+            >
+                <option
+                    className="lang__select--en"
+                    value="en">
+                    EN
+                </option>
+                <option
+                    className="lang__select--ua"
+                    value="ua">
+                    UA
+                </option>
+            </select>
+        </>
     )
 }
 
