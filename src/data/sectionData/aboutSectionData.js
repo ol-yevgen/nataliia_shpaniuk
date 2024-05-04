@@ -1,30 +1,30 @@
 export const aboutSectionDataUa = [
     {
-        title: 'Про мене',
-        text: 'Ваш ідеальний креативний PR-менеджер, оскільки:',
+        title: "Про мене",
+        text: "Ваш ідеальний креативний PR-менеджер, оскільки:",
         services: [
-            '4 роки працюю й удосконалююсь у піарі та журналістиці, 2 роки — у диджиталі',
-            'Не боюсь дедлайнів і фрази: «Мені через годину потрібен реліз» :)',
-            'Організовую заходи, створюю контент для ЗМІ і соцмереж',
+            "4 роки працюю й удосконалююсь у піарі та журналістиці, 2 роки — у диджиталі",
+            "Не боюсь дедлайнів і фрази: «Мені через годину потрібен реліз» :)",
+            "Організовую заходи, створюю контент для ЗМІ і соцмереж",
         ],
-        download: 'Резюме'
+        download: "Резюме"
     },
     {
-        title: 'Навички',
+        title: "Навички",
         services: [
-            'Створення комунікаційних стратегій',
-            'Створення контент-плану',
-            'Написання різних видів журналістських та піар-текстів',
-            'Написання текстів для соцмереж',
-            'Редагування текстів',
-            'Антикризові комунікації',
-            'Івент-менеджмент',
-            'Проджект-менеджмент '
+            "Створення комунікаційних стратегій",
+            "Створення контент-плану",
+            "Написання різних видів журналістських та піар-текстів",
+            "Написання текстів для соцмереж",
+            "Редагування текстів",
+            "Антикризові комунікації",
+            "Івент-менеджмент",
+            "Проджект-менеджмент "
 
         ]
     },
     {
-        title: 'Мови',
+        title: "Мови",
         services: [
             <>
                 <span className="languages__name">Українська:</span>
@@ -45,41 +45,41 @@ export const aboutSectionDataUa = [
         ]
     },
     {
-        title: 'Інтереси',
+        title: "Інтереси",
         services: [
-            'Авіація',
-            'Книги',
-            'Подорожі',
+            "Авіація",
+            "Книги",
+            "Подорожі",
         ]
     },
 ]
 
 export const aboutSectionDataEn = [
     {
-        title: 'about me',
-        text: 'Iʼm your ideal creative PR-manager, because:',
+        title: "about me",
+        text: "Iʼm your ideal creative PR-manager, because:",
         services: [
-            'I have been working and improving in PR and journalism for 4 years, 2 —years in digital',
-            'I am not afraid of deadlines and the phrase: "I need a press release in an hour" :)',
-            'I organize events, create content for the media and social networks',
+            "I have been working and improving in PR and journalism for 4 years, 2 —years in digital",
+            "I am not afraid of deadlines and the phrase: 'I need a press release in an hour' :)",
+            "I organize events, create content for the media and social networks",
         ],
-        download: 'Download CV'
+        download: "Download CV"
     },
     {
-        title: 'Services',
+        title: "Services",
         services: [
-            'Creation of communication strategies',
-            'Creating a content plan',
-            'Writing different types of journalistic and PR texts',
-            'Writing texts for social networks',
-            'Editing of texts',
-            'Anti-crisis communications',
-            'Event management',
-            'Project management',
+            "Creation of communication strategies",
+            "Creating a content plan",
+            "Writing different types of journalistic and PR texts",
+            "Writing texts for social networks",
+            "Editing of texts",
+            "Anti-crisis communications",
+            "Event management",
+            "Project management",
         ]
     },
     {
-        title: 'Мови',
+        title: "Мови",
         services: [
             <>
                 <span className="languages__name">Ukranian:</span>
@@ -100,11 +100,11 @@ export const aboutSectionDataEn = [
         ]
     },
     {
-        title: 'interests',
+        title: "interests",
         services: [
-            'Aviation',
-            'Books',
-            'Traveling',
+            "Aviation",
+            "Books",
+            "Traveling",
         ]
     },
 ]

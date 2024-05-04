@@ -24,33 +24,26 @@ const About = () => {
     const language = useChangeLanguage(aboutSectionDataUa, aboutSectionDataEn)
 
     const aboutSections = (arr) => {
+        
         return arr.map((section, index) => {
+            const firstColumn = section.title === 'about me' || section.title === 'Про мене'
             return (
                 <div className="about__column" key={index}>
                     <h2 className="title">{section.title}</h2>
-                    {section.title === 'about me' || section.title === 'Про мене' ? (
-                        <>
-                            <p className="about__text">
-                                {section.text}
-                            </p>
-                            <ul className="about__list">
-                                {section.services.map(service => {
-                                    return (
-                                        <li className="about__list-item" key={uuidv4()}>{service}</li>
-                                    )
-                                })}
-                            </ul>
-                            <a href={lang === 'en' ? cvENG : cvUA} className="btn" download='CV_Shpaniuk_N'>{section.download}</a>
-                        </>
-                    ) : <ul className="about__list">
-                        {
-                            section.services.map(service => {
-                                return (
-                                    <li className="about__list-item" key={uuidv4()}>{service}</li>
-                                )
-                            })
-                        }
+                    {firstColumn &&
+                        <p className="about__text">
+                            {section.text}
+                        </p>
+                    }
+                    <ul className="about__list">
+                        {section.services.map(service => {
+                            return (
+                                <li className="about__list-item" key={uuidv4()}>{service}</li>
+                            )
+                        })}
                     </ul>
+                    {firstColumn &&
+                        <a href={lang === 'en' ? cvENG : cvUA} className="btn" download='CV_Shpaniuk_N'>{section.download}</a>
                     }
                 </div>
             )

@@ -32,6 +32,13 @@ import Freelance8 from '../assets/myProjects/freelance/8.webp'
 import Freelance9 from '../assets/myProjects/freelance/9.webp'
 import Freelance10 from '../assets/myProjects/freelance/10.webp'
 import Freelance11 from '../assets/myProjects/freelance/11.webp'
+import Freelance12 from '../assets/myProjects/freelance/12.webp'
+import Freelance13 from '../assets/myProjects/freelance/13.webp'
+import Freelance14 from '../assets/myProjects/freelance/14.webp'
+import Freelance15 from '../assets/myProjects/freelance/15.webp'
+import Freelance16 from '../assets/myProjects/freelance/16.webp'
+import Freelance17 from '../assets/myProjects/freelance/17.webp'
+import Freelance18 from '../assets/myProjects/freelance/18.webp'
 
 import LeverX1 from '../assets/myProjects/leverx/1.webp'
 import LeverX2 from '../assets/myProjects/leverx/2.webp'
@@ -255,6 +262,44 @@ const projects = {
             link: 'https://jurliga.ligazakon.net/news/224317_restratsya-v-diny-sudovy-sistem-dlya-kogo-obovyazkova-z-19-zhovtnya-2023-roku-a-dlya-kogo--z-20-lyutogo-2024',
         },
 
+
+
+        {
+            image: Freelance12,
+            subtitle: 'Вчимо іноземну мову у релакс-режимі: доступний онлайн-курс «700 найпоширеніших англійських слів»',
+            link: 'https://redmonster.net.ua/uk/news-detail?article=-700-&newsArticleId=62aaee6568afe7002ae57103',
+        },
+        {
+            image: Freelance13,
+            subtitle: 'На Red Monster зʼявився онлайн-курс географії для 5—9 класів',
+            link: 'https://redmonster.net.ua/uk/news-detail?article=-red-monster-59-&newsArticleId=6285efc04f4e5e002af6bf8c',
+        },
+        {
+            image: Freelance14,
+            subtitle: 'Моволюби можуть безкоштовно пройти онлайн-курс «Українська мова. 6 клас»',
+            link: 'https://redmonster.net.ua/uk/news-detail?article=-6-&newsArticleId=630c62949d7d43002add2fa4',
+        },
+        {
+            image: Freelance15,
+            subtitle: 'Банкрутство в період дії воєнного стану: що встановлено новими законами',
+            link: 'https://jurliga.ligazakon.net/aktualno/13882_bankrutstvo-v-perod-d-vonnogo-stanu-shcho-vstanovleno-novimi-zakonami',
+        },
+        {
+            image: Freelance16,
+            subtitle: 'Стали менше їсти? На продуктах почали економити 70% українців – дослідження',
+            link: 'https://news.obozrevatel.com/ukr/economics/fea/ukraintsi-stali-menshe-isti-na-izhi-pochali-zaoschadzhuvati.htm',
+        },
+        {
+            image: Freelance17,
+            subtitle: 'Онлайн-захід «Тренди у сфері людського капіталу 2023: нові правила для світу без меж»',
+            link: 'https://chamber.ua/ua/events/onlayn-zakhid-trendy-u-sferi-liudskoho-kapitalu-2023-novi-pravyla-dlia-svitu-bez-mezh/',
+        },
+        {
+            image: Freelance18,
+            subtitle: 'Компанія «Делойт» проведе презентацію та дискусію щодо трендів у сфері людського капіталу',
+            link: 'https://eba.com.ua/kompaniya-delojt-provede-prezentatsiyu-ta-dyskusiyu-shhodo-trendiv-u-sferi-lyudskogo-kapitalu/',
+        },
+        
     ],
     facebook: [
         {
